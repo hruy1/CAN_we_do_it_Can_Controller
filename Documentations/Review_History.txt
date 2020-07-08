@@ -1,0 +1,105 @@
+project_name: CAN_we_do_it_Can_Controller
+ 
+------------------------- CAN1-40 Adding FIFO requirements documentation------------------------- 
+Author: PricelessAntonio
+Reviewers:
+ID: 445734133
+merge_commit_sha: 3f3e51f613cbcb8ef0a05eb9591ca11381fbdfd8
+Created: 2020-07-07 22:39:08
+Closed: None
+Description: 
+ 
+Review Comments: 
+Conversational Comments: 
+ 
+Changed_Files: 
+file1: Documentation/Requirements/fifo_requirements.docx
+------------------------- CAN1-40 Adding FIFO requirements documentation------------------------- 
+
+
+
+------------------------- CAN1-46 #create tx_priority_logic requirements by Waseem------------------------- 
+Author: waseem55
+Reviewers:
+ID: 445574411
+merge_commit_sha: 4c32878522fafd6b0222c6a10b122f56a8e84559
+Created: 2020-07-07 18:15:24
+Closed: None
+Description: 
+ 
+Review Comments: 
+Conversational Comments: 
+ 
+Changed_Files: 
+file1: Documentations/Requirements/TX_Priority_Logic.docx
+------------------------- CAN1-46 #create tx_priority_logic requirements by Waseem------------------------- 
+
+
+
+------------------------- CAN1-4 Added Documentation------------------------- 
+Author: hruy1
+Reviewers: PricelessAntonio
+ID: 442962565
+merge_commit_sha: 04d8f2cb40841ccd7553641104e2a62939a7ac75
+Created: 2020-07-01 20:11:38
+Closed: 2020-07-01 20:35:25
+Description: 
+ 
+Review Comments: 
+PricelessAntonio 2020-07-01 20:13:05
+Body: 
+ 
+Conversational Comments: 
+ 
+Changed_Files: 
+file1: Documentations/CAN_Controller_Project_Schedule.xlsx
+file1: Documentations/Checklists/Requirements Checklist.docx
+file1: Documentations/Checklists/Testcases Checklist.docx
+file1: Documentations/Checklists/Validation Checklist.docx
+file1: Documentations/Checklists/Verification Checklist.docx
+file1: Documentations/HDP and Join Milestone/CAN Hardware Development Plan.docx
+file1: Documentations/HDP and Join Milestone/Milestones Joint Schedule.xlsx
+file1: Documentations/Specifications/System Specification Diagrams/.drawio files/Acceptance Filter.drawio
+file1: Documentations/Specifications/System Specification Diagrams/.drawio files/Bit Stream Processor.drawio
+file1: Documentations/Specifications/System Specification Diagrams/.drawio files/Bit Timing Module.drawio
+file1: Documentations/Specifications/System Specification Diagrams/.drawio files/Configuration Registers.drawio
+file1: Documentations/Specifications/System Specification Diagrams/.drawio files/Generic FIFO Module.drawio
+file1: Documentations/Specifications/System Specification Diagrams/.drawio files/Microprocessor Bus Interface.drawio
+file1: Documentations/Specifications/System Specification Diagrams/.drawio files/Old/CAN Bit Stream Processor.drawio
+file1: Documentations/Specifications/System Specification Diagrams/.drawio files/Old/CAN Bit Timing Module.drawio
+file1: Documentations/Specifications/System Specification Diagrams/.drawio files/Old/System Specification v1.drawio
+file1: Documentations/Specifications/System Specification Diagrams/.drawio files/Old/acceptance_filter.drawio
+file1: Documentations/Specifications/System Specification Diagrams/.drawio files/Old/bus_interface.drawio
+file1: Documentations/Specifications/System Specification Diagrams/.drawio files/Old/config_regs.drawio
+file1: Documentations/Specifications/System Specification Diagrams/.drawio files/Old/tx_fifo.drawio
+file1: Documentations/Specifications/System Specification Diagrams/.drawio files/Old/tx_priority_logic.drawio
+file1: Documentations/Specifications/System Specification Diagrams/.drawio files/Old/tx_rx_fifo.drawio
+file1: Documentations/Specifications/System Specification Diagrams/.drawio files/System Specification v1.drawio
+file1: Documentations/Specifications/System Specification Diagrams/.drawio files/Tx Priority Logic.drawio
+file1: Documentations/Specifications/System Specification Diagrams/Acceptance Filter.png
+file1: Documentations/Specifications/System Specification Diagrams/Bit Stream Processor.png
+file1: Documentations/Specifications/System Specification Diagrams/Bit Timing Module.png
+file1: Documentations/Specifications/System Specification Diagrams/Configuration Registers.png
+file1: Documentations/Specifications/System Specification Diagrams/Generic FIFO Module.png
+file1: Documentations/Specifications/System Specification Diagrams/Microprocessor Bus Interface.png
+file1: Documentations/Specifications/System Specification Diagrams/Old/CAN Bit Stream Processor.png
+file1: Documentations/Specifications/System Specification Diagrams/Old/CAN Bit Timing Module.png
+file1: Documentations/Specifications/System Specification Diagrams/Old/System Specification v1.png
+file1: Documentations/Specifications/System Specification Diagrams/Old/acceptance_filter.png
+file1: Documentations/Specifications/System Specification Diagrams/Old/bus_interface.png
+file1: Documentations/Specifications/System Specification Diagrams/Old/config_regs.png
+file1: Documentations/Specifications/System Specification Diagrams/Old/rx_fifo.png
+file1: Documentations/Specifications/System Specification Diagrams/Old/tx_fifo.png
+file1: Documentations/Specifications/System Specification Diagrams/Old/tx_priority_logic.png
+file1: Documentations/Specifications/System Specification Diagrams/Old/tx_rx_fifo.png
+file1: Documentations/Specifications/System Specification Diagrams/System Specification v1.png
+file1: Documentations/Specifications/System Specification Diagrams/Tx Priority Logic.png
+file1: Documentations/Specifications/System Specifications v1.docx
+file1: Documentations/Specifications/Xilinx_CAN_datasheet.pdf
+file1: Documentations/Standers/Branching Strategies Version 2.docx
+file1: Documentations/Standers/Coding Standards Version 2.docx
+file1: Documentations/Standers/Requirement Standards Version 2.docx
+------------------------- CAN1-4 Added Documentation------------------------- 
+
+
+
