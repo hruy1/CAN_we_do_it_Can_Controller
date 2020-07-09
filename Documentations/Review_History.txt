@@ -1,15 +1,114 @@
 project_name: CAN_we_do_it_Can_Controller
  
-------------------------- CAN1-40 Adding FIFO requirements documentation------------------------- 
+------------------------- CAN1-40 Adding FIFO requirements documentation by Antonio.------------------------- 
 Author: PricelessAntonio
+Reviewers: waseem55
+ID: 446579830
+merge_commit_sha: 969dd995a6c75686e790aa843449d2873f906261
+Created: 2020-07-09 02:31:46
+Closed: 2020-07-09 15:50:51
+Description: 
+ 
+Review Comments: 
+waseem55 2020-07-09 15:32:45
+Body: [FIFO Requirements Checklist V1.docx](https://gith
+ub.com/hruy1/CAN_we_do_it_Can_Controller/files/489
+7826/FIFO.Requirements.Checklist.V1.docx)  [FIFO
+Requirements Checklist V2.docx](https://github.com
+/hruy1/CAN_we_do_it_Can_Controller/files/4897827/F
+IFO.Requirements.Checklist.V2.docx)  [fifo_require
+ments.docx](https://github.com/hruy1/CAN_we_do_it_
+Can_Controller/files/4897828/fifo_requirements.doc
+x)
+ 
+waseem55 2020-07-09 15:50:02
+Body: 
+ 
+Conversational Comments: 
+waseem55 2020-07-09 15:48:18
+[FIFO Requirements Checklist V3.docx](https://gith
+ub.com/hruy1/CAN_we_do_it_Can_Controller/files/489
+7906/FIFO.Requirements.Checklist.V3.docx)
+ 
+ 
+Changed_Files: 
+file1: Documentations/fifo_requirements.docx
+------------------------- CAN1-40 Adding FIFO requirements documentation by Antonio.------------------------- 
+
+
+
+------------------------- CAN1-52 #create bit stream processor reqs by Waseem------------------------- 
+Author: waseem55
 Reviewers:
-ID: 445734133
-merge_commit_sha: 3f3e51f613cbcb8ef0a05eb9591ca11381fbdfd8
-Created: 2020-07-07 22:39:08
+ID: 446436710
+merge_commit_sha: 3b5e7858918568611e9aebd9de26a0e0b671a84e
+Created: 2020-07-08 19:21:13
 Closed: None
 Description: 
  
 Review Comments: 
+Conversational Comments: 
+ 
+Changed_Files: 
+file1: Documentations/Requirements/Bit_Stream_Processor.docx
+------------------------- CAN1-52 #create bit stream processor reqs by Waseem------------------------- 
+
+
+
+------------------------- CAN1-36 Added Microcontroller IF Requirement by Harry and Code Review History------------------------- 
+Author: hruy1
+Reviewers:
+ID: 446320474
+merge_commit_sha: 287ac2b7fe7dad34732bff9e358e1074dc84ffb6
+Created: 2020-07-08 15:30:04
+Closed: None
+Description: 
+ 
+Review Comments: 
+Conversational Comments: 
+PricelessAntonio 2020-07-08 20:11:44
+Need to address comments in reviewed document.
+Attached are the reviewed document and the
+checklist for the microcontroller IF.
+[Microcontroller IF Requirement.docx](https://gith
+ub.com/hruy1/CAN_we_do_it_Can_Controller/files/489
+3005/Microcontroller.IF.Requirement.docx)
+[mc_if_Requirements Checklist.docx](https://github
+.com/hruy1/CAN_we_do_it_Can_Controller/files/48930
+06/mc_if_Requirements.Checklist.docx)
+ 
+PricelessAntonio 2020-07-09 16:30:47
+[Microcontroller IF Requirement Review v2.docx](ht
+tps://github.com/hruy1/CAN_we_do_it_Can_Controller
+/files/4898109/Microcontroller.IF.Requirement.Revi
+ew.v2.docx)  [mc_if_Requirements Checklist v2.docx
+](https://github.com/hruy1/CAN_we_do_it_Can_Contro
+ller/files/4898110/mc_if_Requirements.Checklist.v2
+.docx)
+ 
+ 
+Changed_Files: 
+file1: Documentations/Requirements/Microcontroller IF Requirement.docx
+file1: Documentations/Review_History.txt
+------------------------- CAN1-36 Added Microcontroller IF Requirement by Harry and Code Review History------------------------- 
+
+
+
+------------------------- CAN1-40 Adding FIFO requirements documentation------------------------- 
+Author: PricelessAntonio
+Reviewers: waseem55
+ID: 445734133
+merge_commit_sha: 3f3e51f613cbcb8ef0a05eb9591ca11381fbdfd8
+Created: 2020-07-07 22:39:08
+Closed: 2020-07-09 02:06:10
+Description: 
+ 
+Review Comments: 
+waseem55 2020-07-08 16:21:15
+Body: [FIFO Requirements Checklist.docx](https://github.
+com/hruy1/CAN_we_do_it_Can_Controller/files/489191
+6/FIFO.Requirements.Checklist.docx)
+ 
 Conversational Comments: 
  
 Changed_Files: 
