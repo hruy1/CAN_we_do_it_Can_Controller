@@ -9,14 +9,7 @@ sys_clk and can_clk.
   
 ---------------------------------------------------------------------------------*/
 
-module CAN_TX_Priority_Logic #(
-    
-    parameter   IDLE        = 3'b000,
-    parameter   PREPARE     = 3'b001,
-    parameter   SEND_HPB    = 3'b011,
-    parameter   SEND_FIFO   = 3'b010,
-    parameter   SEND        = 3'b110
-    )
+module CAN_TX_Priority_Logic
     (
     input   logic           i_sys_clk,
     input   logic           i_can_clk,
@@ -34,6 +27,12 @@ module CAN_TX_Priority_Logic #(
     output  logic           o_fifo_r_en
     );
     
+    localparam   IDLE        = 3'b000;
+    localparam   PREPARE     = 3'b001;
+    localparam   SEND_HPB    = 3'b011;
+    localparam   SEND_FIFO   = 3'b010;
+    localparam   SEND        = 3'b110;
+        
     logic   [2:0]   state   = IDLE;
     logic   [2:0]   n_state = IDLE;
 
@@ -47,6 +46,7 @@ module CAN_TX_Priority_Logic #(
     logic           s_busy_can  = 1'b0;
     logic           t_send_en   = 1'b0;
     logic           s_send_en   = 1'b0;
+    
     
 // Synchronizing signals coming from CAN clock:
     always @(posedge i_sys_clk) begin
@@ -119,8 +119,10 @@ module CAN_TX_Priority_Logic #(
         endcase
     end
     
-    always @(posedge i_sys_clk) begin
-        if (latch_hpb == 1'b1) 
+    always @(posedge i_sys_clk or posedge i_reset) begin
+        if (i_reset)
+            latch_data <= 128'b0;
+        else if (latch_hpb == 1'b1) 
             latch_data <= i_hpb_data;
         else if (latch_fifo == 1'b1)
             latch_data <= i_fifo_data;
