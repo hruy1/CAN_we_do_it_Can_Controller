@@ -1,10 +1,11 @@
 /*-------------------------------------------------------------------------------
-Project: Stopwatch
+Project: CAN Controller
 Module: TX Priority Logic
 Author: Waseem Orphali
 Date: 07/13/2020
-Module Description:
-
+Module Description: This module implements the TX priority logic module as described
+in the specifications doc and Xilinx data sheet. It also synchronizes signals between
+sys_clk and can_clk. 
   
 ---------------------------------------------------------------------------------*/
 
@@ -33,16 +34,19 @@ module CAN_TX_Priority_Logic #(
     output  logic           o_fifo_r_en
     );
     
-    logic   [1:0]   state   = IDLE;
-    logic   [1:0]   n_state = IDLE;
+    logic   [2:0]   state   = IDLE;
+    logic   [2:0]   n_state = IDLE;
 
     logic           latch_fifo = 1'b0;
     logic           latch_hpb = 1'b0;
     logic   [127:0] latch_data = 128'b0;
 // Synchronization signals (t: temp, s: synchronized):
-    logic   [127:0] t_send_data, s_send_data = 1'b0;
-    logic           t_busy_can, s_busy_can = 1'b0;
-    logic           t_send_en, s_send_en = 1'b0;
+    logic   [127:0] t_send_data = 128'b0;
+    logic   [127:0] s_send_data = 128'b0;
+    logic           t_busy_can  = 1'b0;
+    logic           s_busy_can  = 1'b0;
+    logic           t_send_en   = 1'b0;
+    logic           s_send_en   = 1'b0;
     
 // Synchronizing signals coming from CAN clock:
     always @(posedge i_sys_clk) begin
@@ -51,12 +55,18 @@ module CAN_TX_Priority_Logic #(
     end
 
 // Synchronizing signals going to CAN clock:
-    always @(posedge i_can_clk) begin
-        t_send_data <= s_send_data;
-        o_send_data <= t_send_data;
-        
-        t_send_en   <= s_send_en;
-        o_send_en   <= t_send_en;
+    always @(posedge i_can_clk or posedge i_reset) begin
+        if (i_reset) begin
+            o_send_data <= 128'b0;
+            o_send_en   <= 1'b0;
+        end
+        else begin
+            t_send_data <= s_send_data;
+            o_send_data <= t_send_data;
+            
+            t_send_en   <= s_send_en;
+            o_send_en   <= t_send_en;
+        end
     end
         
 // Sequential state transition process:
