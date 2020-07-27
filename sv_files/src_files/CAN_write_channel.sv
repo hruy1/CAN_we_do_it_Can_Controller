@@ -87,11 +87,11 @@ begin
   if (i_reset) begin
     wr_vaild_addr = 1'b0;
   end else begin
-     if ((i_addr == 6'h00) | (i_addr== 6'h01) | (i_addr== 6'h02) | (i_addr== 6'h03) | (i_addr== 6'h05)
-        | (i_addr== 6'h08) | (i_addr== 6'h09) | (i_addr== 6'h0A) | (i_addr== 6'h0B) | (i_addr== 6'h0C)
-        | (i_addr== 6'h0D) | (i_addr== 6'h0D) | (i_addr== 6'h0E) | (i_addr== 6'h0F) | (i_addr== 6'h10)
-        | (i_addr== 6'h11) | (i_addr== 6'h18) | (i_addr== 6'h19) | (i_addr== 6'h1A) | (i_addr== 6'h1B)
-        | (i_addr== 6'h1C) | (i_addr== 6'h1D) | (i_addr== 6'h1E) | (i_addr== 6'h1F) | (i_addr== 6'h20)) begin
+     if ( (i_addr == 6'h00) || (i_addr== 6'h01) || (i_addr== 6'h02) || (i_addr== 6'h03) || (i_addr== 6'h05)
+        || (i_addr== 6'h08) || (i_addr== 6'h09) || (i_addr== 6'h0A) || (i_addr== 6'h0B) || (i_addr== 6'h0C)
+        || (i_addr== 6'h0D) || (i_addr== 6'h0D) || (i_addr== 6'h0E) || (i_addr== 6'h0F) || (i_addr== 6'h10)
+        || (i_addr== 6'h11) || (i_addr== 6'h18) || (i_addr== 6'h19) || (i_addr== 6'h1A) || (i_addr== 6'h1B)
+        || (i_addr== 6'h1C) || (i_addr== 6'h1D) || (i_addr== 6'h1E) || (i_addr== 6'h1F) || (i_addr== 6'h20)) begin
        wr_vaild_addr = 1'b1;
      end else begin
        wr_vaild_addr = 1'b0;

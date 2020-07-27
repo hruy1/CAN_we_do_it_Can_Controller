@@ -82,11 +82,11 @@ always_comb begin
   if (i_reset) begin
      rd_vaild_addr = 1'b0;
   end else begin     
-     if((i_addr== 6'h00) | (i_addr== 6'h01) | (i_addr== 6'h02) | (i_addr== 6'h03) | (i_addr== 6'h04)
-      | (i_addr== 6'h05) | (i_addr== 6'h06) | (i_addr== 6'h07) | (i_addr== 6'h08) | (i_addr== 6'h14)
-      | (i_addr== 6'h15) | (i_addr== 6'h16) | (i_addr== 6'h17) | (i_addr== 6'h18) | (i_addr== 6'h19)
-      | (i_addr== 6'h1A) | (i_addr== 6'h1B) | (i_addr== 6'h1C) | (i_addr== 6'h1D) | (i_addr== 6'h1E)
-      | (i_addr== 6'h1F) | (i_addr== 6'h20)) begin
+     if( (i_addr== 6'h00) || (i_addr== 6'h01) || (i_addr== 6'h02) || (i_addr== 6'h03) || (i_addr== 6'h04)
+      || (i_addr== 6'h05) || (i_addr== 6'h06) || (i_addr== 6'h07) || (i_addr== 6'h08) || (i_addr== 6'h14)
+      || (i_addr== 6'h15) || (i_addr== 6'h16) || (i_addr== 6'h17) || (i_addr== 6'h18) || (i_addr== 6'h19)
+      || (i_addr== 6'h1A) || (i_addr== 6'h1B) || (i_addr== 6'h1C) || (i_addr== 6'h1D) || (i_addr== 6'h1E)
+      || (i_addr== 6'h1F) || (i_addr== 6'h20)) begin
         rd_vaild_addr = 1'b1;
      end else begin
         rd_vaild_addr = 1'b0;
@@ -97,7 +97,7 @@ always_comb begin
 // 32 bits data output logic
 always_comb
 begin
- if (i_rd_en & rd_vaild_addr) begin
+ if (i_rd_en && rd_vaild_addr) begin
    if (i_ack) begin
      o_reg_data <= i_reg_r_data;
    end else begin

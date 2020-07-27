@@ -5,7 +5,7 @@
   Author:Pengfei He
   Date:July/22/2020
   Module Description: read or write address one pulse decoder. Submodule of Microcontroller Interface.
-  Internal state mashine has five states: idel, rd(read operation state), wr(write operation state), 
+  Internal state mashine has five states: idle, rd(read operation state), wr(write operation state), 
   rd_done(read operation is finished), wr(write operation is finished))
   ---------------------------------------------------------------------------------*/
 
@@ -19,13 +19,13 @@ module rtc_one_pulse_decoder(
      output logic [30:0] o_rs_vector
     );
   
-typedef enum logic [2:0] {idel,rd,wr,rd_done,wr_done} State;
-State currentState, nextState;  
+typedef enum logic [2:0] {idle,rd,wr,rd_done,wr_done} State;
+State currentState, nextState = idle;  
     
 always_ff@(posedge i_sys_clk, posedge i_reset) 
  begin
   if(i_reset) begin
-   currentState <= idel;
+   currentState <= idle;
   end else begin
    currentState <= nextState;
   end
@@ -34,13 +34,13 @@ always_ff@(posedge i_sys_clk, posedge i_reset)
  always_comb
   case(currentState)
   
-  idel:begin
-    if(i_cs == 1'b1 & i_r_neg_w == 1'b1) begin
+  idle:begin
+    if(i_cs == 1'b1 && i_r_neg_w == 1'b1) begin
      nextState = rd;
-    end else if(i_cs == 1'b1 & i_r_neg_w == 1'b0) begin
+    end else if(i_cs == 1'b1 && i_r_neg_w == 1'b0) begin
      nextState = wr;
     end else begin
-     nextState = idel;
+     nextState = idle;
     end
    end
    
@@ -53,9 +53,9 @@ always_ff@(posedge i_sys_clk, posedge i_reset)
      end
  
    rd_done:begin
-      if(i_cs == 1'b0 & i_r_neg_w == 1'b0) begin
-      nextState =idel;
-      end else if(i_cs == 1'b1 & i_r_neg_w == 1'b0) begin
+      if(i_cs == 1'b0 && i_r_neg_w == 1'b0) begin
+      nextState =idle;
+      end else if(i_cs == 1'b1 && i_r_neg_w == 1'b0) begin
       nextState = wr;
       end else begin
       nextState  = rd_done;
@@ -63,9 +63,9 @@ always_ff@(posedge i_sys_clk, posedge i_reset)
      end
      
    wr_done:begin
-      if(i_cs == 1'b0 & i_r_neg_w == 1'b0) begin
-      nextState =idel;
-      end else if(i_cs == 1'b1 & i_r_neg_w == 1'b1) begin
+      if(i_cs == 1'b0 && i_r_neg_w == 1'b0) begin
+      nextState =idle;
+      end else if(i_cs == 1'b1 && i_r_neg_w == 1'b1) begin
       nextState = rd;
       end else begin
       nextState  = wr_done;
@@ -73,15 +73,15 @@ always_ff@(posedge i_sys_clk, posedge i_reset)
      end
         
    default:begin
-         nextState = idel;
+         nextState = idle;
           end
  endcase;
 
  always_comb
   case(currentState)
   
-  idel:begin
-    o_rs_vector = 30'b0000000000000000000000000000000;
+  idle:begin
+    o_rs_vector = 31'b0;
    end
    
    rd:begin
@@ -93,15 +93,15 @@ always_ff@(posedge i_sys_clk, posedge i_reset)
     end
  
    rd_done:begin
-     o_rs_vector = 30'b0000000000000000000000000000000;
+     o_rs_vector = 31'b0;
    end
    
    wr_done:begin
-     o_rs_vector = 30'b0000000000000000000000000000000;
+     o_rs_vector = 31'b0;
    end
    
    default:begin
-      o_rs_vector = 30'b0000000000000000000000000000000;
+     o_rs_vector = 31'b0;
    end
  endcase;
  

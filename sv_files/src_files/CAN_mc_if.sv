@@ -71,9 +71,9 @@ always_ff@(posedge i_sys_clk or  posedge i_reset)
   if(i_reset) begin
    rd_op  <=1'b0;
    wr_op  <=1'b0;
-  end else if (i_cs == 1'b1 & i_r_neg_w == 1'b1) begin
+  end else if (i_cs == 1'b1 && i_r_neg_w == 1'b1) begin
    rd_op  <= 1'b1;
-  end else if (i_cs == 1'b1 & i_r_neg_w == 1'b0) begin
+  end else if (i_cs == 1'b1 && i_r_neg_w == 1'b0) begin
    wr_op  <= 1'b1;
   end else begin
    rd_op  <=1'b0;
