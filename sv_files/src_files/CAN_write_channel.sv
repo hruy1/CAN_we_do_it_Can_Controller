@@ -1,13 +1,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 /*--------------------------------------------------------------------------------
   Project: CAN Controllor 
-  Module: rtc_write_channel --- submodule of Microcontroller Interface
+  Module: can_write_channel --- submodule of Microcontroller Interface
   Author:Pengfei He
   Date:July/22/2020
   Module Description: Write channel of Microcontroller Interface. 
   ---------------------------------------------------------------------------------*/
 
-module rtc_write_channel(
+module can_write_channel(
     input  logic i_wr_en, // write channel enable from rtc_mc_if
     input  logic i_reset, //active high asynchronous reset from rtc_mc_if
     input  logic [5:0] i_addr, //6 bits address input from rtc_mc_if
@@ -105,7 +105,7 @@ always_comb begin
   if (i_reset) begin
     temp_data_reg = 32'h0;
   end else begin
-     if(i_wr_en & wr_vaild_addr) begin
+     if(i_wr_en && wr_vaild_addr) begin
         temp_data_reg = i_bus_data;
      end else begin
         temp_data_reg = temp_data_reg;
