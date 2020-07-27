@@ -1,6 +1,16 @@
+//////////////////////////////////////////////////////////////////////////////////
+/*--------------------------------------------------------------------------------
+  Project: CAN Controllor 
+  Module: can_mc_if
+  Author:Pengfei He
+  Date:July/22/2020
+  Module Description: Decodes input address from Microcontroller and pulses the chip select bit corresponding 
+  to the register being addressed. On a low to high transition of ‘i_cs’, if ‘i_readnegwrite’ is high then this
+  signals the start of a read operation, otherwise it starts a write operation.
+  ---------------------------------------------------------------------------------*/
 
 
-module rtc_mc_if(
+module can_mc_if(
 //  signals from wrapper 
     input  logic i_sys_clk, // 100 Mhz system clock input 
     input  logic i_reset,  //  active high asynchronous reset

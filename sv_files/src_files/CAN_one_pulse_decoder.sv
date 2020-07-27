@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 /*--------------------------------------------------------------------------------
   Project: CAN Controllor 
-  Module: rtc_one_pulse_decoder --- submodule of Microcontroller Interface
+  Module: can_one_pulse_decoder --- submodule of Microcontroller Interface
   Author:Pengfei He
   Date:July/22/2020
   Module Description: read or write address one pulse decoder. Submodule of Microcontroller Interface.
@@ -9,7 +9,7 @@
   rd_done(read operation is finished), wr(write operation is finished))
   ---------------------------------------------------------------------------------*/
 
-module rtc_one_pulse_decoder(
+module can_one_pulse_decoder(
      input  logic i_sys_clk,
      input  logic i_reset,
      input  logic i_r_neg_w,
