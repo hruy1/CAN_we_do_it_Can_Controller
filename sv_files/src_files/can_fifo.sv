@@ -92,7 +92,7 @@ module can_fifo #(
   
   // These assign statments deal with the full and empty flag logic
   assign o_empty = (w_ptr == r_ptr);
-  assign o_full  = ((w_ptr[PTR_WIDTH-1] != r_ptr[PTR_WIDTH-1]) &
+  assign o_full  = ((w_ptr[PTR_WIDTH-1] != r_ptr[PTR_WIDTH-1]) &&
                    (w_ptr[PTR_WIDTH-2:0] == r_ptr[PTR_WIDTH-2:0]));
 
 endmodule
