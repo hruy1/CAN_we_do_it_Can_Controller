@@ -23,11 +23,11 @@ module can_fifo #(
   output logic [127:0] o_fifo_r_data
 );
 
-  localparam PTR_WIDTH = (MEM_DEPTH / 2) - 1;
+  localparam PTR_WIDTH = $clog2(MEM_DEPTH) + 1;
 
   logic [127:0] memory [0:MEM_DEPTH-1];
-  logic [PTR_WIDTH:0] r_ptr;
-  logic [PTR_WIDTH:0] w_ptr;
+  logic [PTR_WIDTH-1:0] r_ptr;
+  logic [PTR_WIDTH-1:0] w_ptr;
 
   // This always block deals with the write pointer and overflow logic
   // Also deals with the clearing of memory on reset
@@ -42,7 +42,7 @@ module can_fifo #(
     end
     else if (!o_full) begin
       if (i_w_en) begin
-        memory[w_ptr[PTR_WIDTH-1:0]] <= i_fifo_w_data;
+        memory[w_ptr[PTR_WIDTH-2:0]] <= i_fifo_w_data;
         w_ptr <= w_ptr + 1'b1;
         o_overflow <= 1'b0;
         
@@ -88,11 +88,11 @@ module can_fifo #(
   end
   
   // Assigns o_fifo_r_data to the memory location value r_ptr is currently pointing to
-  assign o_fifo_r_data = memory[r_ptr[PTR_WIDTH-1:0]];
+  assign o_fifo_r_data = memory[r_ptr[PTR_WIDTH-2:0]];
   
   // These assign statments deal with the full and empty flag logic
   assign o_empty = (w_ptr == r_ptr);
-  assign o_full  = ((w_ptr[PTR_WIDTH] != r_ptr[PTR_WIDTH]) &
-                   (w_ptr[PTR_WIDTH-1:0] == r_ptr[PTR_WIDTH-1:0]));
+  assign o_full  = ((w_ptr[PTR_WIDTH-1] != r_ptr[PTR_WIDTH-1]) &
+                   (w_ptr[PTR_WIDTH-2:0] == r_ptr[PTR_WIDTH-2:0]));
 
 endmodule
