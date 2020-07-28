@@ -5,7 +5,7 @@
   Author:Pengfei He
   Date:July/22/2020
   Module Description: Decodes input address from Microcontroller and pulses the chip select bit corresponding 
-  to the register being addressed. On a low to high transition of ‘i_cs’, if ‘i_readnegwrite’ is high then this
+  to the register being addressed. On a low to high transition of ‘i_cs�?, if ‘i_readnegwrite�? is high then this
   signals the start of a read operation, otherwise it starts a write operation.
   ---------------------------------------------------------------------------------*/
 
@@ -41,7 +41,7 @@ logic [30:0] wr_dec_addr;// 31 bits write channel register select signal
 //----------internal signals end----------//  
 
 // read channel submodule    
-rtc_read_channel read_channel (.i_rd_en (rd_op),
+can_read_channel read_channel (.i_rd_en (rd_op),
                            .i_reset(i_reset),
                            .i_addr(i_addr),
                            .i_reg_r_data(i_reg_r_data),
@@ -49,7 +49,7 @@ rtc_read_channel read_channel (.i_rd_en (rd_op),
                            .i_ack(i_reg_ack),
                            .rd_dec_addr(rd_dec_addr)); 
  // write channel submodule                     
-rtc_write_channel write_channel (.i_wr_en (wr_op),
+can_write_channel write_channel (.i_wr_en (wr_op),
                              .i_reset(i_reset),
                              .i_addr(i_addr),
                              .i_bus_data(i_bus_data),
@@ -57,7 +57,7 @@ rtc_write_channel write_channel (.i_wr_en (wr_op),
                              .wr_dec_addr(wr_dec_addr));  
                              
  //one pulse signal decoder submodule                            
-rtc_one_pulse_decoder One_Pulse_Decoder(.i_sys_clk(i_sys_clk),                              
+can_one_pulse_decoder One_Pulse_Decoder(.i_sys_clk(i_sys_clk),                              
                                     .i_reset(i_reset),
                                     .i_r_neg_w(i_r_neg_w),
                                     .i_cs(i_cs),

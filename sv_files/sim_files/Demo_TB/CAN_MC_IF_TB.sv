@@ -7,7 +7,7 @@
   Module Description: Test bench for microcontroller interface
   ---------------------------------------------------------------------------------*/
 
-module MC_IF_TB;
+module CAN_MC_IF_TB;
 //  signals from wrapper 
       logic i_sys_clk; // 100 Mhz system clock input 
       logic i_reset;  //  active high asynchronous reset
@@ -27,7 +27,7 @@ module MC_IF_TB;
       logic [31:0] o_reg_w_bus; // 32 bits data outputs to configuration regsiter
       logic [30:0] o_rs_vector; // 31 bits decoded adress signal output to configuration regsiter
       logic o_r_neg_w;  // read or write operation output signal to configuration resiter
-rtc_mc_if UUT (.i_sys_clk,
+can_mc_if UUT (.i_sys_clk,
                .i_reset,
                .i_bus_data,
                .i_addr,.i_r_neg_w,.i_cs,.o_reg_data,.o_ack,.o_error,.i_reg_r_data,.i_reg_ack,.i_reg_error,.o_reg_w_bus,.o_rs_vector,.o_r_neg_w);
