@@ -9,8 +9,8 @@
   ---------------------------------------------------------------------------------*/
 
 
-module CAN_Acceptance_Filter
-#( parameter integer NUMBER_OF_ACCEPTANCE_FILTRES = 4)
+module CAN_Acceptanbce_Filter
+#( parameter integer NUMBER_OF_ACCEPTANCE_FILTRES = 0)
   (
 // signals input from configuration register
     input logic i_sys_clk,
@@ -88,7 +88,7 @@ module CAN_Acceptance_Filter
       CAN_AFR AFR3(.i_afr_uaf(i_uaf3),.i_afr_afmr(i_afmr3),.i_afr_afir(i_afir3),.in_rx_message(i_rx_message[127:96]),.o_afr_acfbsy(afr_acfbsy3),.o_afr_pass(afr_pass3));
       CAN_AFR AFR4(.i_afr_uaf(i_uaf4),.i_afr_afmr(i_afmr4),.i_afr_afir(i_afir4),.in_rx_message(i_rx_message[127:96]),.o_afr_acfbsy(afr_acfbsy4),.o_afr_pass(afr_pass4));
     end else begin
-      CAN_ACF_NOT_EXIST ACF_NOT_EXIST(.i_syn_can_ready,.i_rx_message(i_rx_message), .i_rx_full(i_rx_full),.i_rx_w_en(o_rx_w_en),.i_rx_fifo_w_data(o_rx_fifo_w_data));   
+      CAN_ACF_NOT_EXIST ACF_NOT_EXIST(.i_syn_can_ready(syn_can_ready),.i_rx_message(i_rx_message), .i_rx_full(i_rx_full),.o_rx_w_en(o_rx_w_en),.i_rx_fifo_w_data(o_rx_fifo_w_data));   
     end 
   endgenerate;
       
