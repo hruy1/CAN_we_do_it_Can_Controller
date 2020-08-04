@@ -5,7 +5,7 @@
   Author:Pengfei He
   Date:July/22/2020
   Module Description: Decodes input address from Microcontroller and pulses the chip select bit corresponding 
-  to the register being addressed. On a low to high transition of â€˜i_csâ€?, if â€˜i_readnegwriteâ€? is high then this
+  to the register being addressed. On a low to high transition of 'i_cs'?, if 'i_r_neg_w' is high then this
   signals the start of a read operation, otherwise it starts a write operation.
   ---------------------------------------------------------------------------------*/
 
