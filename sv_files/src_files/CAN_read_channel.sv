@@ -1,14 +1,14 @@
 //////////////////////////////////////////////////////////////////////////////////
 /*--------------------------------------------------------------------------------
   Project: CAN Controllor 
-  Module: rtc_read_channel --- submodule of Microcontroller Interface
+  Module: can_read_channel --- submodule of Microcontroller Interface
   Author:Pengfei He
   Date:July/22/2020
   Module Description: Read channel of Microcontroller Interface. 
   ---------------------------------------------------------------------------------*/
 
 
-module rtc_read_channel(
+module can_read_channel(
     input  logic i_rd_en, // read channel enable signal from rtc_mc_if
     input  logic i_reset,//  active high asynchronous reset from rtc_mc_if
     input  logic [5:0] i_addr, //6 bits address input from rtc_mc_if
